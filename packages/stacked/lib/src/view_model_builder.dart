@@ -105,18 +105,14 @@ class _ViewModelBuilderState<T extends ChangeNotifier>
       if (!widget.disposeViewModel) {
         return ChangeNotifierProvider.value(
           value: _model,
-          builder: (context, child) {
-            return widget.builder(context, context.read<T>(), child);
-          },
+          builder: (context, child) => widget.builder(context, _model, child),
           child: widget.staticChild,
         );
       }
 
       return ChangeNotifierProvider(
         create: (context) => _model,
-        builder: (context, child) {
-          return widget.builder(context, context.read<T>(), child);
-        },
+        builder: (context, child) => widget.builder(context, _model, child),
         child: widget.staticChild,
       );
     }
