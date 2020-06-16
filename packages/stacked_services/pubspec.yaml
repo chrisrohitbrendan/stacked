@@ -11,9 +11,9 @@ dependencies:
     sdk: flutter
 
   # navigation
-  get: ^2.5.2
+  get: ^2.13.1
   # service_location
-  injectable: ^0.4.0
+  injectable: ^0.4.0+1
 
 dev_dependencies:
   flutter_test:
