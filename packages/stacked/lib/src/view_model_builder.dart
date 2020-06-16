@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+
 import 'base_view_models.dart';
 
 enum _ViewModelBuilderType { NonReactive, Reactive }
@@ -92,7 +93,7 @@ class _ViewModelBuilderState<T extends ChangeNotifier>
 
   void _initialiseSpecialViewModels() {
     // Add any additional actions here for spcialised ViewModels
-     // Add any additional actions here for spcialised ViewModels
+    // Add any additional actions here for spcialised ViewModels
     if (_model is Initialisable) {
       (_model as Initialisable).initialise();
     }
@@ -104,13 +105,19 @@ class _ViewModelBuilderState<T extends ChangeNotifier>
       if (!widget.disposeViewModel) {
         return ChangeNotifierProvider.value(
           value: _model,
-          child: widget.builder(context, _model, widget.staticChild),
+          builder: (context, child) {
+            return widget.builder(context, context.read<T>(), child);
+          },
+          child: widget.staticChild,
         );
       }
 
       return ChangeNotifierProvider(
         create: (context) => _model,
-        child: widget.builder(context, _model, widget.staticChild),
+        builder: (context, child) {
+          return widget.builder(context, context.read<T>(), child);
+        },
+        child: widget.staticChild,
       );
     }
 
