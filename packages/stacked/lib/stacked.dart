@@ -1,6 +1,7 @@
 library stacked;
 
 export 'src/base_view_models.dart';
+export 'src/index_tracking_viewmodel.dart';
 export 'src/reactive_service_mixin.dart';
 export 'src/selector_view_model_widget.dart';
 export 'src/view_model_builder.dart';

@@ -1,7 +1,84 @@
+## 0.5.2
+
+- Changes Dialog response to a `dynamic` value instead of `List<dynamic>`
+
+## 0.5.1
+
+### Custom Dialog
+
+- Add ability, like Custom Snackbar, to registry multiple variants of dialog.
+- Use variant term instead customData, I thins this is more clear then customData term to refer a specific type of Dialog
+- Add a builder property to declare the UI.
+- Rename registerCustomDialogUi to registerCustomDialogBuilder.
+- Update documentation.
+
+### Custom Snackbar
+
+- Use variant term instead customData, like I said for Custom Dialog, I think this is more clear use the variant term instead customData to refer a specific.
+- Normalize the name, instead registerCustomSnackbarconfig use the registerCustomSnackbarConfig.
+- Update documentation.
+
+## 0.5.0 - Custom Snackbar styling
+
+- Adds `SnackbarConfig` functionality and associated functions for custom snackbar styling
+
+## 0.4.11
+
+- Exposes `barrierDismssible` on showConfirmation dialog
+
+## 0.4.10
+
+- Adds null check to dialog service completer
+
+## 0.4.9
+
+- Completes dialogCompleter for confirmation dialog as well
+
+## 0.4.8
+
+- Completes dialogCompleter if the custom dialog is dismissed without the button tap
+
+## 0.4.7
+
+- Makes the dialog completer finish when dialog is dismissed using barrier dismissal
+
+## 0.4.6
+
+- Removed injectable
+
+## 0.4.5
+
+- Bumps injectable version
+
+## 0.4.4+3
+
+- Bumps get version
+
+## 0.4.4+2
+
+- Readme updates to include services in
+
+## 0.4.4+1
+
+- Adds id's to all navigation functions to reference correct nav key
+
+## 0.4.4
+
+- Exposes functionality for nested navigator keys
+
+## 0.4.3
+
+- Exposes barrierColor on the dialog service
+
+## 0.4.2
+
+- Adds barrierDismissable optional boolean
+- Adds instantInit option to allow to show snackbar in initState function call
+
 ## 0.4.1
 
 - Adds custom data parameter to dialog service
-- Adds default values for show custom dialog 
+- Adds default values for show custom dialog
 
 ## 0.4.0
 
